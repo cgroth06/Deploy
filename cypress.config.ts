@@ -1,6 +1,5 @@
 import { defineConfig } from 'cypress';
 import viteConfig from './vite.config';
-import coverageTask from '@cypress/code-coverage/task';
 
 export default defineConfig({
   component: {
@@ -10,12 +9,6 @@ export default defineConfig({
       bundler: 'vite',
       viteConfig,
     },
-    specPattern: "cypress/component/**/*.cy.{js,ts,jsx,tsx}",
-		setupNodeEvents(on, config) {
-			coverageTask(on, config);
-
-			return config;
-		},
   },
 
   e2e: {
